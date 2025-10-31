@@ -41,16 +41,17 @@ El registro que generamos incluye metadatos esenciales como identificador de ped
 Nuestra implementación asegura que el directorio de destino exista antes de intentar escribir, creándolo automáticamente si es necesario. Esto previene errores comunes en sistemas de archivos y garantiza la robustez del proceso de registro. Una vez completado el registro, la herramienta confirma la operación al usuario con un mensaje claro que incluye los detalles de la solicitud y un número de seguimiento generado a partir del identificador del pedido.
 
 ## Diagramas de Arquitectura
+Realizamos diagramas en C4 para describir el contexto y los contenedores.
 
-![Diagrama de contexto](.Fase1/Contexto.png){width="380"}
+![Diagrama de contexto](./Contexto.png){width="380"}
 
-![Diagrama de contenedores](./Fase1/N1.png){width="380"}
+![Diagrama de contenedores](./N1.png){width="380"}
 
 ### Diagrama de Flujo de Proceso
 
 Creamos un diagrama detallado que muestra el flujo completo desde que un usuario envía una consulta hasta que recibe una respuesta. Este diagrama ilustra todas las decisiones que toma el agente, las herramientas que puede invocar, y cómo convergen los diferentes caminos para generar la respuesta final.
 
-![Diagrama de Flujo del Proceso de Devolución](./Fase1/ProcDevol.png)
+![Diagrama de Flujo del Proceso de Devolución](./ProcDevol.png)
 
 El diagrama muestra claramente la bifurcación inicial entre consultas generales que activan RAG y solicitudes de acción que invocan herramientas. Ilustra cómo cada herramienta tiene su propia lógica de validación y procesamiento, y cómo todas las rutas eventualmente convergen en la generación de una respuesta formateada que combina resultados de herramientas con contexto recuperado mediante RAG.
 
